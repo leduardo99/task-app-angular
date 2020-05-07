@@ -1,0 +1,49 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nb-card {
+  width: 450px;
+}
+
+nb-list {
+  margin-top: 30px;
+  max-height: 100vh - 40vh;
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  button {
+    margin-left: 5px;
+  }
+}
+
+nb-list-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+
+    button + button {
+      margin-left: 5px;
+    }
+  }
+}
+
+.done-todo {
+  text-decoration: line-through;
+  color: grey;
+}

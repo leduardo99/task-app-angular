@@ -1,0 +1,38 @@
+<div class="container">
+  <nb-card>
+    <nb-card-body>
+      <nb-form-field>
+        <input
+          name="description"
+          type="text"
+          placeholder="Enter your task"
+          shape="round"
+          nbInput
+          fullWidth
+          (keyup.enter)="handleSubmit()"
+          [(ngModel)]="description"
+        />
+        <nb-icon nbPrefix icon="paper-plane-outline" pack="eva"></nb-icon>
+      </nb-form-field>
+    </nb-card-body>
+    <nb-list>
+      <nb-list-item *ngFor="let todo of todos" [class.done-todo]="todo.done">
+        {{ todo.description }}
+
+        <div>
+          <button
+            nbButton
+            status="success"
+            [disabled]="todo.done"
+            (click)="handleToggleTodo(todo.id)"
+          >
+            <nb-icon nbPrefix icon="checkmark-outline" pack="eva"></nb-icon>
+          </button>
+          <button nbButton status="danger" (click)="handleRemoveTodo(todo.id)">
+            <nb-icon nbPrefix icon="close-outline" pack="eva"></nb-icon>
+          </button>
+        </div>
+      </nb-list-item>
+    </nb-list>
+  </nb-card>
+</div>
