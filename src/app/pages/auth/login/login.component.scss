@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+nb-card {
+  width: 350px;
+}
+
+nb-form-field + nb-form-field {
+  margin-top: 20px;
+}
+
+button {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.container-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

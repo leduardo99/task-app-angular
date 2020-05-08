@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import {
   NbInputModule,
   NbFormFieldModule,
@@ -8,19 +9,17 @@ import {
   NbCardModule,
   NbListModule,
   NbButtonModule,
-  NbTooltipModule,
-  NbActionsModule,
-  NbLayoutModule,
   NbSpinnerModule,
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 
-import { TodoComponent } from './todo.component';
+import { LoginComponent } from './login.component';
 
 @NgModule({
-  declarations: [TodoComponent],
+  declarations: [LoginComponent],
   imports: [
     CommonModule,
+    RouterModule,
     FormsModule,
     NbInputModule,
     NbFormFieldModule,
@@ -29,10 +28,7 @@ import { TodoComponent } from './todo.component';
     NbListModule,
     NbButtonModule,
     NbEvaIconsModule,
-    NbTooltipModule,
-    NbActionsModule,
-    NbLayoutModule,
     NbSpinnerModule,
   ],
 })
-export class TodoModule {}
+export class LoginModule {}

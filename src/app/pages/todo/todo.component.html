@@ -1,23 +1,51 @@
+<nb-layout-header fixed>
+  <div class="header">
+    <div class="logo-container">
+      <h3>TaskApp</h3>
+    </div>
+
+    <nb-actions size="small">
+      <nb-action
+        icon="power-outline"
+        (click)="authService.SignOut()"
+      ></nb-action>
+    </nb-actions>
+  </div>
+</nb-layout-header>
+
 <div class="container">
   <nb-card>
     <nb-card-body>
-      <nb-form-field>
-        <input
-          name="description"
-          type="text"
-          placeholder="Enter your task"
+      <form>
+        <nb-form-field>
+          <input
+            name="description"
+            type="text"
+            placeholder="Enter your task"
+            shape="round"
+            nbInput
+            fullWidth
+            [(ngModel)]="description"
+          />
+          <nb-icon nbPrefix icon="paper-plane-outline" pack="eva"></nb-icon>
+        </nb-form-field>
+
+        <button
+          nbButton
+          type="submit"
+          status="primary"
           shape="round"
-          nbInput
-          fullWidth
-          (keyup.enter)="handleSubmit()"
-          [(ngModel)]="description"
-        />
-        <nb-icon nbPrefix icon="paper-plane-outline" pack="eva"></nb-icon>
-      </nb-form-field>
+          (click)="handleSubmit($event)"
+        >
+          <nb-icon nbPrefix icon="plus-outline" pack="eva"></nb-icon>
+        </button>
+      </form>
     </nb-card-body>
     <nb-list>
       <nb-list-item *ngFor="let todo of todos" [class.done-todo]="todo.done">
-        {{ todo.description }}
+        <p>
+          {{ todo.description }}
+        </p>
 
         <div>
           <button

@@ -1,23 +1,12 @@
 import { Component } from '@angular/core';
 
+import { AuthenticationService } from './_core/authentication/authentication.service';
+
 @Component({
   selector: 'app-root',
-  template: `
-    <nb-layout>
-      <nb-layout-column>
-        <router-outlet></router-outlet>
-      </nb-layout-column>
-
-      <nb-layout-footer fixed>
-        <span>
-          Developed by
-
-          <a href="https://github.com/leduardo99" target="_blank">
-            Luís Eduardo
-          </a>
-        </span>
-      </nb-layout-footer>
-    </nb-layout>
-  `,
+  styleUrls: ['app.component.scss'],
+  templateUrl: 'app.component.html',
 })
-export class AppComponent {}
+export class AppComponent {
+  constructor(public authService: AuthenticationService) {}
+}

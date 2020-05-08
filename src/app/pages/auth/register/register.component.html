@@ -1,0 +1,57 @@
+<div class="container">
+  <nb-card accent="info">
+    <nb-card-header>Register an account</nb-card-header>
+    <nb-card-body>
+      <form #form>
+        <nb-form-field>
+          <input
+            name="email"
+            type="email"
+            placeholder="Enter your e-mail"
+            shape="round"
+            nbInput
+            fullWidth
+            required
+            autofocus
+            #email
+          />
+          <nb-icon nbPrefix icon="at-outline" pack="eva"></nb-icon>
+        </nb-form-field>
+
+        <nb-form-field>
+          <input
+            name="password"
+            type="password"
+            placeholder="Enter your password"
+            shape="round"
+            nbInput
+            fullWidth
+            required
+            #password
+          />
+          <nb-icon nbPrefix icon="hash-outline" pack="eva"></nb-icon>
+        </nb-form-field>
+
+        <button
+          type="submit"
+          nbButton
+          fullWidth
+          status="primary"
+          shape="round"
+          (click)="signUp(email.value, password.value)"
+          [nbSpinner]="loading"
+          [disabled]="loading"
+          nbSpinnerStatus="primary"
+        >
+          REGISTER
+        </button>
+      </form>
+
+      <div class="container-link">
+        <a routerLink="/login">
+          Already have an account?
+        </a>
+      </div>
+    </nb-card-body>
+  </nb-card>
+</div>

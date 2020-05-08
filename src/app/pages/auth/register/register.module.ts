@@ -8,19 +8,18 @@ import {
   NbCardModule,
   NbListModule,
   NbButtonModule,
-  NbTooltipModule,
-  NbActionsModule,
-  NbLayoutModule,
   NbSpinnerModule,
 } from '@nebular/theme';
+import { RouterModule } from '@angular/router';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 
-import { TodoComponent } from './todo.component';
+import { RegisterComponent } from './register.component';
 
 @NgModule({
-  declarations: [TodoComponent],
+  declarations: [RegisterComponent],
   imports: [
     CommonModule,
+    RouterModule,
     FormsModule,
     NbInputModule,
     NbFormFieldModule,
@@ -29,10 +28,7 @@ import { TodoComponent } from './todo.component';
     NbListModule,
     NbButtonModule,
     NbEvaIconsModule,
-    NbTooltipModule,
-    NbActionsModule,
-    NbLayoutModule,
     NbSpinnerModule,
   ],
 })
-export class TodoModule {}
+export class RegisterModule {}
